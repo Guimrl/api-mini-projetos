@@ -1,4 +1,4 @@
-const { getAllProjects, getProjectById, insertProject } = require("../services/projects");
+const { getAllProjects, getProjectById, insertProject, editProject } = require("../services/projects");
 
 function getAll(req, res) {
     try {
@@ -31,8 +31,20 @@ function postProject(req, res) {
     }
 }
 
+function patchProject(req, res) {
+    try {
+        const id = req.params.id;
+        const body = req.body;
+        editProject(body, id);
+        res.send("success");
+    } catch (error) {
+
+    }
+}
+
 module.exports = {
 	getAll,
     getProject,
-    postProject
+    postProject,
+    patchProject
 };

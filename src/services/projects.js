@@ -17,8 +17,18 @@ function insertProject(newProject) {
     fs.writeFileSync("db/projects.json", JSON.stringify(newProjectsList));
 }
 
+function editProject(modify, id) {
+    let projects = JSON.parse(fs.readFileSync("db/projects.json"));
+    const modifyIndex = projects.findIndex(project => project.id === id);
+    const changes = { ...projects[modifyIndex], ...modify };
+    projects[modifyIndex] = changes;
+
+    fs.writeFileSync("db/projects.json", JSON.stringify(projects));
+}
+
 module.exports = {
     getAllProjects,
     getProjectById,
-    insertProject
+    insertProject,
+    editProject
 }
