@@ -8,4 +8,4 @@ app.use('/projetos', projetos);
 
 app.listen(port, () => {
     console.log(`Escutando a porta ${port}`);
-})
+});
