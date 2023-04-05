@@ -1,4 +1,4 @@
-const { getAllProjects, getProjectById, insertProject, editProject } = require("../services/projects");
+const { getAllProjects, getProjectById, insertProject, editProject, deleteProjectById } = require("../services/projects");
 
 function getAll(req, res) {
     try {
@@ -42,9 +42,20 @@ function patchProject(req, res) {
     }
 }
 
+function deleteProject(req, res) {
+    try {
+        const id = req.params.id;
+        deleteProjectById(id);
+        res.send("success");
+    } catch (error) {
+        
+    }
+}
+
 module.exports = {
 	getAll,
     getProject,
     postProject,
-    patchProject
+    patchProject,
+    deleteProject
 };

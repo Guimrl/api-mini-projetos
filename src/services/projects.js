@@ -26,9 +26,17 @@ function editProject(modify, id) {
     fs.writeFileSync("db/projects.json", JSON.stringify(projects));
 }
 
+function deleteProjectById(id) {
+    const projects = JSON.parse(fs.readFileSync("db/projects.json"));
+    const projectFiltered = projects.filter(project => project.id !== id);
+
+    fs.writeFileSync("db/projects.json", JSON.stringify(projectFiltered));
+}
+
 module.exports = {
     getAllProjects,
     getProjectById,
     insertProject,
-    editProject
+    editProject,
+    deleteProjectById
 }
