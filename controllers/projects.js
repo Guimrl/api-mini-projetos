@@ -1,4 +1,4 @@
-function getProjetos(req, res) {
+function getAll(req, res) {
     try {
         res.send("Hello, world!");
     } catch (error) {
@@ -8,5 +8,5 @@ function getProjetos(req, res) {
 }
 
 module.exports = {
-    getProjetos
+    getAll
 }
