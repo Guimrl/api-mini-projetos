@@ -8,5 +8,5 @@ const projects = require("./routes/projects");
 app.use("/projects", projects);
 
 app.listen(port, () => {
-  console.log(`Escutando a porta ${port}`);
+  console.log(`Listening on port: ${port}`);
 });
