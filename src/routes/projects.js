@@ -2,7 +2,7 @@ const { Router } = require("express");
 const { getAll } = require("../controllers/projects");
 const router = Router();
 
-router.get('/', getAll());
+router.get('/', getAll);
 
 router.post('/', (req, res) => {
     res.send("Você fez uma requisição do tipo POST");

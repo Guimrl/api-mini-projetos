@@ -1,10 +1,11 @@
 const express = require("express");
-const projetos = require("./routes/projetos");
-
 const app = express();
+app.use(express.json());
 const port = 8000;
 
-app.use("/projetos", projetos);
+const projects = require("./routes/projects");
+
+app.use("/projects", projects);
 
 app.listen(port, () => {
   console.log(`Escutando a porta ${port}`);
