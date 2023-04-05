@@ -1,6 +1,6 @@
 function getAll(req, res) {
     try {
-        res.send("Hello, world!");
+        res.send('Hello, world!');
     } catch (error) {
         res.status(500);
         res.send(error.message);
@@ -8,5 +8,5 @@ function getAll(req, res) {
 }
 
 module.exports = {
-    getAll
-}
+	getAll,
+};
