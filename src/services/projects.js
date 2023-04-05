@@ -10,7 +10,15 @@ function getProjectById(id) {
     return projectFiltered;
 }
 
+function insertProject(newProject) {
+    const projects = JSON.parse(fs.readFileSync("db/projects.json"));
+    const newProjectsList = [...projects, newProject];
+
+    fs.writeFileSync("db/projects.json", JSON.stringify(newProjectsList));
+}
+
 module.exports = {
     getAllProjects,
-    getProjectById
+    getProjectById,
+    insertProject
 }
