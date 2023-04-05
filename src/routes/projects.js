@@ -1,12 +1,9 @@
 const { Router } = require("express");
-const { getAll } = require("../controllers/projects");
+const { getAll, getProject } = require("../controllers/projects");
 const router = Router();
 
 router.get('/', getAll);
-
-router.post('/', (req, res) => {
-    res.send("Você fez uma requisição do tipo POST");
-});
+router.get('/:id', getProject);
 
 router.patch('/', (req, res) => {
     res.send("Você fez uma requisição do tipo PATCH");

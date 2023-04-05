@@ -1,4 +1,4 @@
-const { getAllProjects } = require("../services/projects");
+const { getAllProjects, getProjectById } = require("../services/projects");
 
 function getAll(req, res) {
     try {
@@ -10,6 +10,17 @@ function getAll(req, res) {
     }
 }
 
+function getProject(req, res) {
+    try {
+        const id = req.params.id;
+        const project = getProjectById(id);
+        res.send(project);
+    } catch (error) {
+
+    }
+}
+
 module.exports = {
 	getAll,
+    getProject
 };
