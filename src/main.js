@@ -1,6 +1,7 @@
 import express from "express";
 import db from "./config/dbConnect.js";
 import projects from "./models/Project.js";
+import routes from "./routes/index.js";
 
 db.on("error", console.log.bind(console, 'Connection error'));
 db.once("open", () => {
@@ -9,27 +10,8 @@ db.once("open", () => {
 
 const app = express();
 app.use(express.json());
-// const projects = [
-//     {
-//         id: 1,
-//         "title": "calculadora"
-//     },
-//     {
-//         id: 2,
-//         "title": "cronometro"
-//     }
-// ];
 
-app.get('/', (req, res) => {
-    res.status(200).send('Hello, world!');
-});
-
-app.get('/projects', (req, res) => {
-    projects.find((err, projects) => {
-        res.status(200).json(projects);
-    });
-    
-});
+routes(app);
 
 app.get('/projects/:id', (req, res) => {
     let index = getProject(req.params.id);
