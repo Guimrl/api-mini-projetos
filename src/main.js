@@ -1,24 +1,34 @@
 import express from "express";
+import db from "./config/dbConnect.js";
+import projects from "./models/Project.js";
+
+db.on("error", console.log.bind(console, 'Connection error'));
+db.once("open", () => {
+    console.log('Database connection was successful');
+});
 
 const app = express();
 app.use(express.json());
-const projects = [
-    {
-        id: 1,
-        "title": "calculadora"
-    },
-    {
-        id: 2,
-        "title": "cronometro"
-    }
-];
+// const projects = [
+//     {
+//         id: 1,
+//         "title": "calculadora"
+//     },
+//     {
+//         id: 2,
+//         "title": "cronometro"
+//     }
+// ];
 
 app.get('/', (req, res) => {
     res.status(200).send('Hello, world!');
 });
 
 app.get('/projects', (req, res) => {
-    res.status(200).send(projects);
+    projects.find((err, projects) => {
+        res.status(200).json(projects);
+    });
+    
 });
 
 app.get('/projects/:id', (req, res) => {
