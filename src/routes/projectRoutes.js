@@ -3,7 +3,8 @@ import ProjectController from "../controllers/ProjectController.js";
 
 const router = express.Router();
 
-router.get("/projects", ProjectController.getAllProjects);
+router.get("/projects", ProjectController.getAllProjects)
+    .post("/projects", ProjectController.postProject);
 
 
 export default router;
