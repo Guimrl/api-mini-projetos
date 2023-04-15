@@ -42,6 +42,19 @@ class ProjectController {
                 res.status(500).send({ message: err.message });
             }
         });
+
+    }
+
+    static deleteProject = (req, res) => {
+        const id = req.params.id;
+
+        projects.findByIdAndDelete(id, (err) => {
+            if (!err) {
+                res.status(200).send({ messa: 'Project removed with success.' });
+            } else {
+                res.status(200).send({ message: err.message });
+            }
+        });
     }
 
 }
