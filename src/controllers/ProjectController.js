@@ -8,6 +8,18 @@ class ProjectController {
         });
     }
 
+    static getProjectById = (req, res) => {
+        const id = req.params.id;
+
+        projects.findById(id, (err, projects) => {
+            if (err) {
+                res.status(400).send({ message: `${err.message} - Id not found.` });
+            } else {
+                res.status(200).send(projects);
+            }
+        });
+    }
+
     static postProject = (req, res) => {
         let project = new projects(req.body);
 
