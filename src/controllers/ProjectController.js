@@ -19,6 +19,19 @@ class ProjectController {
             }
         });
     }
+
+    static updateProject = (req, res) => {
+        const id = req.params.id;
+
+        projects.findByIdAndUpdate(id, { $set: req.body }, (err) => {
+            if (!err) {
+                res.status(200).send({ message: 'Project Update with success' });
+            } else {
+                res.status(500).send({ message: err.message });
+            }
+        });
+    }
+
 }
 
 export default ProjectController;
