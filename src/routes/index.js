@@ -1,6 +1,6 @@
 import express from "express";
-import router from "./projectRoutes.js";
 import projects from "./projectRoutes.js";
+import nProjects from "./nProjectRoutes.js";
 
 const routes = (app) => {
     app.route("/").get((req, res) => {
@@ -9,7 +9,8 @@ const routes = (app) => {
 
     app.use(
         express.json(),
-        projects
+        projects,
+        nProjects
     )
 }
 
