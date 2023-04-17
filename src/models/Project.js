@@ -6,6 +6,6 @@ const projectSchema = new mongoose.Schema({
     url:    { type: String, required: true },
 });
 
-const projects = mongoose.model('projects', projectSchema);
+const projects = mongoose.model("projects", projectSchema);
 
 export default projects;

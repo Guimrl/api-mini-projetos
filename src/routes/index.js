@@ -11,7 +11,7 @@ const routes = (app) => {
         express.json(),
         projects,
         nProjects
-    )
-}
+    );
+};
 
 export default routes;
