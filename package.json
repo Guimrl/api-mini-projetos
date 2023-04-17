@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "lint": "npx eslint ./src --fix"
   },
   "author": "Guilherme Amaral",
   "license": "ISC",
