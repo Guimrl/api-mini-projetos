@@ -20,6 +20,18 @@ class ProjectController {
         });
     }
 
+    static getProjectByName = (req, res) => {
+        const title = req.query.title;
+
+        projects.find({ 'title': title }, {}, (err, projects) => {
+            if (err) {
+                res.status(400).send({ message: `${err.message} - Name not found.` });
+            } else {
+                res.status(200).send(projects);
+            }
+        });
+    }
+
     static postProject = (req, res) => {
         let project = new projects(req.body);
 
