@@ -20,7 +20,13 @@ para obter notas sobre a implantação do projeto em um sistema ativo.
 
 ### Instalando
 
+Faça um [fork](https://docs.github.com/pt/get-started/quickstart/fork-a-repo) do repositório e em seguida clone o projeto para a sua máquina local.
+Em seguida abra o projeto em seu editor de código favorito e execute o seguinte comando no terminal de sua escolha:
+
     npm install
+    
+Com todos os diretórios necessários para rodar o projeto instalados, crie um arquivo na raíz do projeto com o nome de ".env", você pode usar o arquivo ".env.example" disponibilizado para te guiar neste processo.
+Feito isso, basta executar o comando abaixo para buildar o projeto:
 
     npm run dev
     
@@ -28,10 +34,10 @@ para obter notas sobre a implantação do projeto em um sistema ativo.
     
 ## Autor
 
-  - **Guilherme Amaral** - *Provided README Template* -
+  - **Guilherme Amaral** -
     [Perfil](https://github.com/Guimrl)
 
-<hr>
+
 <div align="center">
     <img align="center" width='120px' src='https://user-images.githubusercontent.com/88007295/209672251-8a43d046-4dfb-44fe-b154-5b4d0f1e13b1.png'/>
 </div>
